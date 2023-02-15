@@ -17,9 +17,10 @@ export class HeroesComponent {
   }
 
   // Create a method to retrieve the heroes from the service:
-  getHeroes(): void {
-    this.heroes = this.heroService.getHeroes();
-  }
+    getHeroes(): void {
+      this.heroService.getHeroes()
+        .subscribe(heroes => this.heroes = heroes)
+    }
 
   //Add a private heroService parameter of type HeroService to the constructor:
   constructor(private heroService: HeroService) {}
